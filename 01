@@ -22,7 +22,6 @@ char words[rows][cols] = {"tgbwwinterwsesn",
 
 
 char *getWordVertical(int);
-
 char *reverse(char *);
 
 bool searchVertical(char input[]){
@@ -60,14 +59,12 @@ int main()
     
     for (int i = 0; i < n; i++){
     	cin.ignore();
-        cin.getline(word,16,'\n');
-        
-        if (searchVertical(word) || searchHorizontal(word)){
+        cin.getline(word,16,'\n');     
+        if (searchVertical(word) || searchHorizontal(word))
             cout << "Ada\n";
-        }else{
+        else
             cout << "Tidak Ada\n";
-		}
+		
     }
     return 0;
 }
-
