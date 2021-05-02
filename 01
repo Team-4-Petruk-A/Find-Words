@@ -25,7 +25,20 @@ char *getWordVertical(int);
 
 char *reverse(char *);
 
-bool searchVertical(char *);
+bool searchVertical(char input[]){
+	char *cek;
+	char word[rows];
+	for (int i=0;i<rows;i++){
+		for (int j=0;j<rows;j++){
+			word[j]=words[j][i];
+		}
+		cek=strstr(word, input);
+		if(cek!=NULL){
+			return true;
+		}
+	}
+	return false;
+}
 
 bool searchHorizontal(char *);
 
@@ -38,6 +51,7 @@ int main()
     cin >> n;
     
     for (int i = 0; i < n; i++){
+    	cin.ignore();
         cin.getline(word,16,'\n');
         
         if (searchVertical(word) || searchHorizontal(word)){
@@ -62,8 +76,4 @@ bool searchHorizontal(char *wordin){
 	}
 	
 	return false;
-}
-
-bool searchVertical(char *word){
-	
 }
