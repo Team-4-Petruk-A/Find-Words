@@ -29,20 +29,7 @@ bool searchVertical(char *);
 
 bool searchHorizontal(char *);
 
-
-bool searchHorizontal(char masukan[]){
-	
-	for (int i = 0; i < 15; i++){
-		char *periksa = strstr (words[i], masukan);
-		
-		if (periksa != 0){
-			return true;
-		}
-	}
-  
-	return false;
-}
-
+char word[16];
 
 int main()
 {
@@ -60,4 +47,23 @@ int main()
 		}
     }
     return 0;
+}
+
+
+bool searchHorizontal(char *wordin){
+	wordin = word;
+	
+	for (int i = 0; i < 15; i++){
+		char *periksa = strstr (words[i], wordin);
+		
+		if (periksa != 0){
+			return true;
+		}
+	}
+	
+	return false;
+}
+
+bool searchVertical(char *word){
+	
 }
